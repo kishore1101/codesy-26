@@ -1,0 +1,72 @@
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.intro-title {
+  font-family: var(--font-horror);
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--color-neon-red);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+.intro-subtitle {
+  font-family: var(--font-metal);
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  animation: lightning 5s infinite;
+}
+
+@keyframes lightning {
+  0%, 95%, 98% { opacity: 0; }
+  96%, 99% { opacity: 0.2; }
+}
+
+.fog-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/fog.png');
+  opacity: 0.3;
+  animation: fog-move 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fog-move {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.loader-bar {
+  position: absolute;
+  bottom: 10%;
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loader-progress {
+  height: 100%;
+  background: var(--color-neon-red);
+  box-shadow: 0 0 10px var(--color-neon-red);
+}

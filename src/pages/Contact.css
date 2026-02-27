@@ -1,0 +1,92 @@
+.contact-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10rem 2rem 5rem;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  padding: 4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(139, 0, 0, 0.2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  margin-top: 4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group label {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-metal);
+  letter-spacing: 0.2em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+  top: -1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-neon-red);
+}
+
+.input-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-neon-red);
+  box-shadow: 0 0 10px var(--color-neon-red);
+  transition: width 0.5s ease;
+}
+
+.form-group input:focus ~ .input-glow,
+.form-group textarea:focus ~ .input-glow {
+  width: 100%;
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
